@@ -1,6 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { TextLink } from "@/components/ui/text-link";
 
 export const Route = createFileRoute("/sign_up/sign_up")({
+  head: () => ({
+    meta: [
+      { title: "Tilmeld dig PLUS T | Plus T" },
+      {
+        name: "description",
+        content:
+          "Sådan tilmelder du dig PLUS T: tilmeldingen åbner midt/slut maj via Det Danske Spejderkorps' hjemmeside. Sæt kryds i kalenderen allerede nu.",
+      },
+    ],
+  }),
   component: () => (
     <div className="flex min-h-[calc(100vh-130px)] items-center justify-center">
       <div className="layout:flex-row flex w-full max-w-[1520px] flex-col items-center gap-8">
@@ -15,14 +26,17 @@ export const Route = createFileRoute("/sign_up/sign_up")({
 
         {/* Højre kolonne - Tekst (nedenunder på mobil) */}
         <div className="layout:w-2/5 layout:pr-12 layout:pl-0 px-6 text-white">
-          <h2 className="text-[20px] md:text-[38px]">
+          <h1 className="text-[20px] md:text-[38px]">
             Sådan tilmelder du dig PLUS T
-          </h2>
+          </h1>
           <p>
             Tilmeld dig på medlemsservice her{" "}
-            <a href="https://medlem.dds.dk/event/id/69596/register">
+            <TextLink
+              href="https://medlem.dds.dk/event/id/69596/register"
+              external
+            >
               Gå til medlemsservice
-            </a>
+            </TextLink>
           </p>
           <p>
             Tilmeldingen til PLUS T åbner midt/slut maj, så sæt kryds i
@@ -31,10 +45,13 @@ export const Route = createFileRoute("/sign_up/sign_up")({
           </p>
           <p>
             Når tilmeldingen åbner, foregår det gennem Det Danske Spejderkorps'
-            hjemmeside. Du finder alt det praktiske og selve tilmeldingen her:
-            <a href="https://dds.dk/arrangement/plus-start-plus-t-1">
+            hjemmeside. Du finder alt det praktiske og selve tilmeldingen her:{" "}
+            <TextLink
+              href="https://dds.dk/arrangement/plus-start-plus-t-1"
+              external
+            >
               Gå til kursusbeskrivelse
-            </a>
+            </TextLink>
           </p>
           <p>
             Indtil da kan du følge med på vores sociale medier, hvor vi giver
